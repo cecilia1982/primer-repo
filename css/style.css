@@ -8,3 +8,14 @@ h1 {
 	font-size: 24px;
 	margin: 0;
 }
+/*aca pusimos el cambio de estilo si pasa la mano por*/
+a {
+	text-decoration: none;
+	color: #CCCCCC;
+}
+a:hover {
+	color: #FFFFFF;
+}
+header {
+	background-color: #212121; 
+}
