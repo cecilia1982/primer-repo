@@ -1,4 +1,4 @@
-//Funciones y eventos, que quiero que haga y quien creo que lo provoque//
+//Funciones y eventos, que quiero que haga y quien quiero que lo provoque//
 function saludar(){ //<--- operacion logica
 	window.alert("Hola desde JavaScript")
 }

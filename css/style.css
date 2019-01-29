@@ -19,3 +19,34 @@ a:hover {
 header {
 	background-color: #212121; 
 }
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	color: white;
+	overflow: hidden; /* overflow auto --Internet Explorer tiene un problema con esta propiedad le fabrica 
+	las barras scroll */ 
+}
+/* hay tres formas de administrar el menu  1) con la propiedad llamada display
+display: block; inline; none; inline-block-- los elementos que son de tipo inline no pueden tener padding
+ni margin superior ni inferior--los elementos inline block y block pueden tener margenes y padding
+li{
+	display inline = elementos uno al lado del otro, no soporta margen y padding.
+	display block = elementos uno debajo del otro soporta margin y padding.
+	display inline block = elementos uno al lado del otro y soportan margen y padding.
+	display none = oculta el elemento completamente de la interfaz. 
+}
+
+*/
+li{
+	float: left;
+}
+
+
+
+
+
+
+
+
+
