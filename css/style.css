@@ -16,16 +16,22 @@ a {
 a:hover {
 	color: #FFFFFF;
 }
-header {
+#top {
 	background-color: #212121; 
+	display: flex; /*permite que se distribuyan los elementos*/
+	flex-direction: row;
+	align-items: center; /* Eje X */
+	justify-content: flex-start; /* Eje Y*/
+	padding: 10px;
 }
-ul{
+#menu {
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	margin: 0 0 0 auto;
 	color: white;
 	overflow: hidden; /* overflow auto --Internet Explorer tiene un problema con esta propiedad le fabrica 
-	las barras scroll */ 
+	las barras scroll --#menu */ 
+	text-align: center;
 }
 /* hay tres formas de administrar el menu  1) con la propiedad llamada display
 display: block; inline; none; inline-block-- los elementos que son de tipo inline no pueden tener padding
@@ -38,11 +44,20 @@ li{
 }
 
 */
-li{
+#menu li{
 	float: left;
 }
 
-
+#menu li a {
+	display: block;
+	padding: 10px;
+	font-size: 20px;
+	color: #D9D9D9;
+}
+#menu li a:hover {
+	color: #FFFFFF;
+	background-color:#AAAAAA;
+}
 
 
 
