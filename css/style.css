@@ -83,23 +83,48 @@ li{
 
 .noticia {
 	border-bottom: solid 1px #CCCCCC;
+	display: flex;
+	margin: 0 10px;
+	padding: 10px 0;
 
 }
 
-
-
 /* ----los ID SE USA # con CLASS .XXXX---img full width 1366 es el ideal-------*/
+/*-----TAREA----*/
 
+.noticia-img {
+	width: 30%;
+	padding: 0 10px;
+	box-sizing: border-box; /*Esta propiedad nos permite hacer que todos los padding y 
+	todos los borders se fusionen*/
+}
 
+.noticia-txt {
+	width: 70%;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
 
+/*Se puede crear una regla que se aplique el mismo estilo en varias clases
+  
+  .noticia-img, .noticia-txt{
+   padding: 0 10px;
+   box-sizing: border-box;
+}
+*/
+/*aca le aplicamos un estilo diferente al ultimo elemento del padre ID #ultimasnoticias
+de la classe (hijos) .noticias las child...*/
+#ultimasNoticias .noticia:last-child {
+	border: none;
+}
 
-
-
-
-
-
-
-
+#copyright p {
+	background-color: #212121;
+	margin: 0px;
+	padding: 10px;
+	color:#FFF;
+	text-align: center;
+}
 
 
 
