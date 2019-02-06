@@ -126,13 +126,41 @@ de la classe (hijos) .noticias las child...*/
 	text-align: center;
 }
 
+#tablaPosiciones table {
+	border-collapse: collapse;
+	border:solid 1px #00000;
+	margin: auto;
+	width: 800px;
+}
+
+#tablaPosiciones table tr{
+	border:solid 1px #00000;
+
+}
+
+#tablaPosiciones table th{
+	background-color: red;
+	color: #FFF;
+	padding: 10px;
 
 
+}
 
+#tablaPosiciones table td{
+	background-color: #CCCCCC;
+	padding: 10px;
 
+}
 
+#tablaPosiciones table td:nth-of-type(odd){ /*impar*/
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
 
-
+}
+#tablaPosiciones table td:nth-of-type(even) strong{ /*pares*/
+	color: green;
+}
 
 
 
