@@ -25,6 +25,9 @@ a:hover {
 	padding: 10px;
 	border-bottom: solid 1px #FFFFFF;
 }
+#top button {
+	display: none; /*PARA OCULTAR EL MENU CUANDO ESTA EN WEB*/
+}
 #menu {
 	list-style: none;
 	padding: 0;
@@ -161,6 +164,67 @@ de la classe (hijos) .noticias las child...*/
 #tablaPosiciones table td:nth-of-type(even) strong{ /*pares*/
 	color: green;
 }
+
+/*--AJUSTES MOBILE--*/
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+	#top {
+		flex-wrap: wrap;
+	}
+	#menu {
+		display: none;
+		margin:auto;
+		width: 100%;
+		position: absolute;
+		background-color: #212121;
+		left: 0;
+		top: 52px;
+		z-index: 9999;
+	
+	}
+	#top button {
+		display: block;
+		background-color:transparent;
+		border: none;
+		color: #CCCCCC;
+		font-size:30px;
+		font-weight: 900;
+		margin-left: auto;
+	}
+	#top button:focus + #menu {
+		display: block;
+
+	}
+
+	#menu li {
+		float: none;
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
