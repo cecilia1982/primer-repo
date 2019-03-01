@@ -57,14 +57,12 @@
                     <h5>París y los Ángeles serán las próximas sedes de los Juegos Olímpicos</h5>
                 </figcaption>
             </figure>
-
             <figure class="carousel-item">
                 <img src="img/juegos-olimpicos.jpg" class="d-block w-100" alt="...">
                 <figcaption class="carousel-caption bg-dark w-100 position-static text-left p-3">
                     <h5>París y los Ángeles serán las próximas sedes de los Juegos Olímpicos</h5>
                 </figcaption>
             </figure>
-            
             <figure class="carousel-item">
                 <img src="img/juegos-olimpicos.jpg" class="d-block w-100" alt="...">
                 <figcaption class="carousel-caption bg-dark w-100 position-static text-left p-3">
@@ -86,10 +84,10 @@
     <!--ABRE NOTICIAS DESTACADAS-->
     <main class="container-fluid">
         <section id="ultimas-noticias">
-
-            <article class="row noticia">
+            <article class="row noticia d-none">
                 <div class="noticia-img col-12 col-sm-5 col-lg-4">
-                    <img src="https://via.placeholder.com/1000x600" class="img-fluid"  ><!--img responsiva va img-fluid-->
+                    <img src="https://via.placeholder.com/1000x600" class="img-fluid">
+                    <!--img responsiva va img-fluid-->
                 </div>
                 <div class="noticia-txt col-12 col-sm-7 col-lg-8">
                     <h3 class="h5 font-weight-bold">{{TITULO}}</h3>
@@ -97,12 +95,8 @@
                     <p>{{DETALLE}}</p>
                 </div>
             </article>
-                 
-
         </section>
     </main>
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- se borraron los valores de integrity y crosorigin-->
@@ -111,15 +105,21 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/noticias.js"></script>
+
     <script>
-        var noticia = document.querySelector(".noticia");
+    for (var i = 0; i < noticias.length; i++) {
+        var noticia = document.querySelector(".noticia").cloneNode(true);
 
-        noticia.querySelector("h3").innerText= titulo;
-        noticia.querySelector(".small a") .innerText= autor;
-        noticia.querySelector("p:last-child") .innerText= detalle;
-        noticia.querySelector("img").src = "img/" + imagen;
+        noticia.querySelector("h3").innerText = noticias[i][0];
+        noticia.querySelector(".small a").innerText = noticias[i][1];
+        noticia.querySelector("p:last-child").innerText = noticias[i][2];
+        noticia.querySelector("img").src = "img/" + noticias[i][3];
 
+        noticia.classList.remove("d-none");
+
+        document.querySelector("#ultimas-noticias").appendChild(noticia);
+    }
     </script>
-</body>
 
+</body>
 </html>
