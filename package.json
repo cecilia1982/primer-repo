@@ -1,0 +1,23 @@
+{
+  "name": "dx",
+  "version": "1.0.0",
+  "description": "DX - DeporteeXtremo\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Xtremo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cecilia1982/primer-repo.git"
+  },
+  "author": "MC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cecilia1982/primer-repo/issues"
+  },
+  "homepage": "https://github.com/cecilia1982/primer-repo#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "http": "0.0.0"
+  }
+}
