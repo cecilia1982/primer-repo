@@ -105,23 +105,45 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
+    //////AJAX//////
 
-        //////AJAX//////
-        var ajax = new XMLHttpRequest();
-        ajax.open("GET", "js/noticias.json");
-        ajax.onload = function (){
-            if( ajax.status == 200 ){
-                console.log( ajax.response )
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "https://api.sheety.co/bbc3eb1b-a1c4-4fc2-84bb-4f0e4bcc5291");
+    ajax.onload = function() {
+        if (ajax.status == 200) {
 
-            }
-        };
-        ajax.send();
+            console.log("Antes de parsear")
+            console.log(ajax.response)
+
+            let noticias = JSON.parse(ajax.response)
+
+            //console.log( "Despues de parsear" )
+            //console.log( noticias )
+
+            noticias.forEach(function(noticia) {
+
+
+                let ficha = document.querySelector(".noticia").cloneNode(true);
+
+                ficha.querySelector("h3").innerText = noticia.titulo;
+                ficha.querySelector(".small a").innerText = noticia.autor;
+                ficha.querySelector("p:last-child").innerText = noticia.detalle;
+                ficha.querySelector("img").src = "img/" + noticia.img;
+
+                ficha.classList.remove("d-none");
+
+                document.querySelector("#ultimas-noticias").appendChild(ficha);
+
+            })
+
+        }
+    };
+    ajax.send();
 
 
 
 
-
-        /*
+    /*
     for (var i = 0; i < noticias.length; i++) {
         var noticia = document.querySelector(".noticia").cloneNode(true);
 
@@ -135,7 +157,7 @@
         document.querySelector("#ultimas-noticias").appendChild(noticia);
     }
     */
-     /*
+    /*
      var plantilla = document.querySelector(".noticia").cloneNode(true);
 
      plantilla.querySelector("h3").innerText = noticia.titulo;
@@ -149,6 +171,6 @@
 
 */
     </script>
-
 </body>
+
 </html>

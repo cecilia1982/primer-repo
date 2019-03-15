@@ -18,6 +18,7 @@
   "homepage": "https://github.com/cecilia1982/primer-repo#readme",
   "dependencies": {
     "fs": "0.0.1-security",
-    "http": "0.0.0"
+    "http": "0.0.0",
+    "path": "^0.12.7"
   }
 }
