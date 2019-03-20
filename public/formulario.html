@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Aprendiendo Boostrap</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <!--HEADER MENU-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" width="40" class="d-inline-block align-center" alt="">
+            <span class="font-weight-bold">DeporteXtremo</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="menu">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Fútbol<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">NBA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ténis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Fórmula 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Boxeo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">JJOO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Moto GP</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main class="container-fluid">
+        <!-- INICIO FORM -->
+
+        <form action="./enviar" method="POST">
+
+            <!--Query String
+
+                en la URL aparece la url de action con los parametros y valores correo / clave  -- si no esta determinado el method, aparece la clave en la url, como peticion GET. Usar el method POST por seguridad y cuando envio archivos.
+
+            -->
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" name="correo"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" name="clave" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" name="suscripcion" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-------FIN FORM------->
+    </main>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- se borraron los valores de integrity y crosorigin-->
+    <!-- Se descargaron los 3 archivos script-->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
