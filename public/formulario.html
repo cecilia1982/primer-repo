@@ -48,39 +48,37 @@
             </ul>
         </div>
     </nav>
-
-
-    <main class="container-fluid">
-        <!-- INICIO FORM -->
-
-        <form action="./enviar" method="POST">
-
-            <!--Query String
+    <!--Query String
 
                 en la URL aparece la url de action con los parametros y valores correo / clave  -- si no esta determinado el method, aparece la clave en la url, como peticion GET. Usar el method POST por seguridad y cuando envio archivos.
 
             -->
-
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" name="correo"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <main class="container-fluid">
+        <!-- INICIO FORM -->
+        <h3>Nueva Noticia</h3>
+        <form action="./enviar" method="POST" class="row">
+            <div class="form-group col-8 offset-2">
+                <label for="titulo">Titulo</label>
+                <input type="text" name="titulo" class="form-control">
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" name="clave" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <div class="form-group col-8 offset-2">
+                <label for="titulo">Autor</label>
+                <input type="text" name="autor" class="form-control">
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" name="suscripcion" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <div class="form-group col-8 offset-2">
+                <label for="titulo">Detalle</label>
+                <textarea name="detalle" class="form-control" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group col-8 offset-2">
+                <label for="titulo">Imagen</label>
+                <input type="text" name="imagen" class="form-control">
+            </div>
+            <div class="form-group col-8 offset-2">
+                <input type="submit" value="enviar" class="btn btn-primary">
+            </div>
         </form>
         <!-------FIN FORM------->
     </main>
-
-
-
 
 
     <!-- Optional JavaScript -->

@@ -1,6 +1,28 @@
 const http = require("http")
 const fs = require("fs")
 const path = require("path")
+const form = require("querystring")
+const loki = require("lokijs")
+
+let noticias = null;
+
+const db = new loki("noticias.json", {
+    autoload: true,
+    autosave: true,
+    autosaveInterval: 4000,
+    autoloadCallback: function() {
+        noticias = db.getCollection("noticias") //<--INTENTAR LEER LAS NOTICIAS DEL JSON.
+
+        console.log("ANDA")
+
+        if (noticias == null) { //<--SI NO PUDO LEERLAS, ES PORQUE NO EXISTEN.
+            noticias = db.addCollection("noticias") //<--ENTONCES CREAR LAS NUEVAS.
+        }
+
+
+    }
+})
+
 
 http.createServer(function(request, response) {
 
@@ -8,11 +30,6 @@ http.createServer(function(request, response) {
 
     //const url = request.url // <-- LEER LA RUTA/RECURSO SOLICITADO EN LA URL
 
-    /*if( resquest.url == "/"){
-        const file = "index.html"
-    } else {
-        const file = request.url
-    }*/
 
     //const file = (CONDICION) ? VERDADERO : FALSO   //<-- OPERADOR TERNARIO
     const file = (request.url == "/") ? "index.html" : request.url
@@ -22,10 +39,10 @@ http.createServer(function(request, response) {
 
         console.log("Este es el body de la peticion HTTP:")
 
-        request.on("data", function(body){
+        request.on("data", function(body) {
             let datos = body.toString()
-            console.log( datos )
 
+            noticias.insert(form.parse(datos))
         })
 
         response.end("Mirar la consola de Git Bash")
@@ -56,10 +73,6 @@ http.createServer(function(request, response) {
     }
 
     let contentType = tipos[ext] || "application/octet-stream"
-
-
-    console.log("Usted ah solicitado el archivo..." + file)
-    console.log("La extension del archivo es: " + ext)
 
     fs.readFile(dir + file, function(error, content) { //<-- INTENTAR LEER/CARGAR EL ARCHIVO/RECURSO SOLICITADO
 
